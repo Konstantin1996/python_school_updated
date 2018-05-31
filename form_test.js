@@ -1,13 +1,6 @@
 var express = require('express');
 
-// var SandCastle = require('sandcastle').SandCastle;
-
-// var sandcastle = new SandCastle();
-
-
-
 var app = express();
-
 
 var bodyParser = require('body-parser');
 
@@ -28,59 +21,47 @@ app.get('',function(req,res){
 
 app.get('/index',function(req,res){
 	var data = {age: 29, body: "tall", favorite_food: "chicken"};
-	res.render('index', { name: "Jordon Levis", person_data: data.age});
+	res.render('index');
 	res.end();
 })
 
-app.get('/index/python_lessons', function(req,res){
-	res.render('python_lessons', {smth : "HZ"});
-	res.end();
+app.get(['/index/python_lessons','/index/python_lessons_2'], function(req,res){
+	if(req.url === '/index/python_lessons'){
+		res.render('python_lessons',{userCode:""});
+	}
+	else if (req.url === '/index/python_lessons_2'){
+		res.render('python_lessons_2',{userCode:""})
+	}
 })
-// var result = '';
-app.post('/index/python_lessons', function(req,res,callback){
+
+app.post(['/index/python_lessons','/index/python_lessons_2'], function(req,res,callback){
 	var userCodeReq = req.body.userCodeReq;
-	var { spawn } = require("child_process");
-	var TOTAL_OUTPUT = ''
+	var numberTask = req.body.taskNumber;
+	console.log("numberTask = " + numberTask);
+	userCodeReq = userCodeReq + numberTask;
 
+	var { spawn } = require("child_process");
+	var result = '';
 	var process = spawn('python3', ['./python.py', userCodeReq]);
 
 	process.stdout.on('data', (data) => {
-		TOTAL_OUTPUT += data;
+		result += data;
 	})
 
 	process.stderr.on('data', (data) => {
-		TOTAL_OUTPUT += data;
+		result += data;
 	})
-	
+
 	process.on('close', (code) => {
-		res.render('python_lessons_answer', {userCode : TOTAL_OUTPUT});
-		console.log(`child process exited with code ${code}`);
+		if(req.url === '/index/python_lessons'){
+			res.render('python_lessons', {userCode : result});
+		} else if(req.url === '/index/python_lessons_2'){
+			res.render('python_lessons_2', {userCode : result});
+		}
 		res.end();
 	});
-})
-
-	// console.log(req.body.userCodeReq);
-
-
-app.get('/user/submit',function(req,res){
-	res.sendFile(__dirname +'/form.html');
-})
-
-
-// var exec = require ('child_process').exec
-
-// exec('ipconfig',function(err, stdout, stderr){
-// 	console.log(stdout);
-// })
-
-
-app.post('/user/submit', function(req,res) {
-	console.log(req.body.name_field);
-	res.send('you enter button body-parser info: ' + req);
-	res.end();
 })
 
 app.get('*', function(req,res){
 	res.send('Opps, something goes wrong');
 })
-
