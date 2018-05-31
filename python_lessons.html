@@ -34,6 +34,9 @@
 			<p class="task-paragraph">Try following example using Try it option available at the top right corner of the below sample code box</p>
 		</section>
 		<section class="code">
+			<div class="editor">
+			</div>
+
 			<div class="form-container">
 				<form class="code-window-user-form">
 					<label class="code-window-user-label" for="user-code">
@@ -110,5 +113,10 @@
 	</footer>
 	<div class="line-bottom"></div>
 	<script type="text/javascript" src="test.js"></script>
+	<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var editor = ace.edit("editor"); // теперь обращаться к редактору будем через editor
+		// Далее весь экшон будет проходить тут!
+	</script>
 </body>
 </html>

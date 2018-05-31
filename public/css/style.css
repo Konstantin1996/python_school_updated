@@ -66,7 +66,7 @@ body{
 
 .main-slogan {
 	text-align: center;
-	font-size: 16px;
+	font-size: 20px;
 	margin-top: 8px;
 	padding: 0px;
 }
@@ -114,6 +114,7 @@ body{
 	list-style-type: none;
 	margin:0px;
 	padding:0px;
+	margin-left: 35px;
 }
 
 .reasons-list .reason-element-advantages {
@@ -157,13 +158,19 @@ body{
 
 
 .container {
-	width: 678px;
+	/* width: 678px; */
+	width: 1000px;
 	/*position: relative;*/
 	/*border: 1px solid black;*/
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+#editor {
+	width: 450px;
+	height: 280px;
 }
 
 .main-header {
@@ -184,10 +191,17 @@ body{
 .guide-paragraph {
 	margin: 0px;
 	margin-bottom: 22px;
+	margin-left: 50px;
+	font-size: 20px;
+}
+
+p {
+	font-size: 20px;
 }
 
 .guide-paragraph:last-child {
 	margin-bottom: 38px;
+
 }
 
 .reasons-header {
@@ -275,7 +289,7 @@ body{
 	position: relative;
 	border-radius: 50px;
 	background-color: #366f9e;
-} 
+}
 
 .social-icon {
 	position: absolute;
@@ -330,7 +344,7 @@ body{
 
 .main-menu-link {
 	font-family: "Fixedsys";
-	font-size: 16px;
+	font-size: 20px;
 	color: black;
 	text-decoration: none;
 }
@@ -347,8 +361,13 @@ body{
 }
 
 .code-window-user-text, .code-window-server-text {
-	width: 320px;
-	height: 200px;
+	width: 450px;
+	height: 274px;
+	background-color: rgb(239, 221, 62, 0.4);
+	resize: none;
+	font-size: 20px;
+	font-family: "Fixedsys";
+	background-image-opa
 }
 
 .user-server-btn {
@@ -365,4 +384,51 @@ input[type="submit"] {
 	margin-top: 35px;
 	margin-bottom: 35px;
 	line-height: 0px;
+}
+
+.task-paragraph{
+	margin-left: 0px;
+
+}
+
+.command {
+	color: #819ff9;
+	font-weight: bold;
+}
+
+.command-examples {
+    background: #e2e2e2;
+		padding-left: 30px;
+}
+
+.arrows {
+	color: rgb(137, 0, 0);;
+}
+
+.specific-command {
+	color: rgb(137, 0, 0);
+}
+
+.text-spaces {
+	margin-left: 40px;
+}
+
+.code-examples {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	font-size: 18px;
+	font-family: "Lucida Console";
+	font-weight: normal;
+}
+
+.code-functions {
+	color: rgb(0, 170, 56);
+	font-weight: bold;
+}
+
+.instructions-block {
+	background-color: rgb(239, 221, 62, 0.2);
+	font-family: "Lucida Console";
+	padding-left: 30px;
 }
