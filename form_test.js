@@ -25,16 +25,19 @@ app.get('/index',function(req,res){
 	res.end();
 })
 
-app.get(['/index/python_lessons','/index/python_lessons_2'], function(req,res){
+app.get(['/index/python_lessons','/index/python_lessons_2','/index/python_lessons_3'], function(req,res){
 	if(req.url === '/index/python_lessons'){
 		res.render('python_lessons',{userCode:""});
 	}
 	else if (req.url === '/index/python_lessons_2'){
 		res.render('python_lessons_2',{userCode:""})
 	}
+	else if (req.url === '/index/python_lessons_3'){
+		res.render('python_lessons_3',{userCode:""})
+	}
 })
 
-app.post(['/index/python_lessons','/index/python_lessons_2'], function(req,res,callback){
+app.post(['/index/python_lessons','/index/python_lessons_2','/index/python_lessons_3'], function(req,res,callback){
 	var userCodeReq = req.body.userCodeReq;
 	var numberTask = req.body.taskNumber;
 	console.log("numberTask = " + numberTask);
@@ -57,6 +60,8 @@ app.post(['/index/python_lessons','/index/python_lessons_2'], function(req,res,c
 			res.render('python_lessons', {userCode : result});
 		} else if(req.url === '/index/python_lessons_2'){
 			res.render('python_lessons_2', {userCode : result});
+		}else if (req.url === '/index/python_lessons_3') {
+			res.render('python_lessons_3', {userCode : result})
 		}
 		res.end();
 	});

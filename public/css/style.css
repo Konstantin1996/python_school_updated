@@ -39,6 +39,7 @@ body{
 	padding: 0px;
 	margin: 0px;
 	min-width: 768px;
+	min-width: 1600px;
 }
 
 
@@ -361,6 +362,7 @@ p {
 }
 
 .code-window-user-text, .code-window-server-text {
+
 	width: 450px;
 	height: 274px;
 	background-color: rgb(239, 221, 62, 0.4);
@@ -369,6 +371,10 @@ p {
 	font-family: "Fixedsys";
 	background-image-opa
 }
+
+/* .code-window-server-text:after{
+	content: "";
+} */
 
 .user-server-btn {
 	margin-left: auto;
@@ -431,4 +437,39 @@ input[type="submit"] {
 	background-color: rgb(239, 221, 62, 0.2);
 	font-family: "Lucida Console";
 	padding-left: 30px;
+}
+
+
+
+.arrow_next_page {
+	/* display: none; */
+	position: absolute;
+	top: 50px;
+	right: -300px;
+	/* height: 50px; */
+	/* width: 20px; */
+	border-radius: 50%;
+	background-color: rgb(197, 224, 249);
+	opacity: 0.5;
+}
+
+.arrow_next_page:hover , .arrow_prev_page:hover{
+	opacity: 0.4;
+}
+
+
+.arrow_prev_page {
+	position: absolute;
+	top: 50px;
+	left: -300px;
+	/* height: 50px; */
+	/* width: 20px; */
+	border-radius: 50%;
+	background-color: rgb(197, 224, 249);
+	opacity: 1;
+	transform: rotate(180deg);
+}
+
+.wrapper_for_arrow {
+	position: relative;
 }

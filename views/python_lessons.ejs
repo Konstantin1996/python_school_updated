@@ -38,12 +38,13 @@
 			<h3>Instructions</h3>
 			<div class="instructions-block">
 				<p class="task-paragraph">Using a <span class = "command">print</span> statement, write <b>HelloWorldPython!</b></p>
+
 			</div>
 			<!-- <p class="task-paragraph">Try following example using Try it option available at the top right corner of the below sample code box</p> -->
+
 		</section>
+
 		<section class="code">
-
-
 
 			<div class="form-container">
 
@@ -53,7 +54,7 @@
 					</label>
 					<div id="editor"></div>
 					<input id="hidden-input" type="hidden" name="userCodeReq" value="">
-					<input type="hidden" name="taskNumber" value="1">
+					<input id="input-task-number"	 type="hidden" name="taskNumber" value="1">
 					<!-- <textarea class="code-window-user-text" rows="10" name="" id="code-user-id" ></textarea> -->
 
 				</form>
@@ -62,9 +63,10 @@
 					<label class="code-window-server-label">
 						<p class="code-window-server-paragraph">Result:</p>
 					</label>
-
+				<div class="wrapper_for_arrow">
 					<textarea class="code-window-server-text" rows="10" name="serverCodeRes" id="code-server-id" disabled="true"><%=userCode%></textarea>
-
+					<a href="javascript: void(0)" class = "arrow_next_page"><img src="/icons/next.png" width="150px" height="150px" alt=""></a>
+				</div>
 				</form>
 			</div>
 
@@ -129,6 +131,7 @@
 		</div>
 	</footer>
 	<div class="line-bottom"></div>
+	<script src="jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 		var editor = ace.edit("editor"); // теперь обращаться к редактору будем через editor
@@ -144,13 +147,7 @@
 		editor.setTheme("ace/theme/katzenmilch");// Далее весь экшон будет проходить тут!
 		editor.getSession().setMode("ace/mode/javascript");
 	</script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
-	<script>
-        var editor = ace.edit("code-user-id");
-        editor.setTheme("ace/theme/chrome");
-        var textarea = $('textarea[name="userCodeReq"]').hide();
-        textarea.val(editor.getSession().getValue());
-        editor.getSession().setMode("ace/mode/javascript");
-    </script> -->
+
+	<script type="text/javascript" src="../js/frontend_test.js"></script>
 </body>
 </html>

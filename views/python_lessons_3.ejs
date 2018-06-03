@@ -29,49 +29,71 @@
 	<main>
 		<div class="container">
 		<section class="task">
-			<h2 class="task-header task-header">For Loops</h2>
-			<p class="task-paragraph">We often want computers to repeat some process several times. Programming languages provide structures that enable you to repeat blocks of instructions over and over again. This type of repetition is known as iteration</p>
-      <p class="task-paragraph">There are two types of loop in Python:</p>
-      <ul>
-        <li><p class="task-paragraph">the <span class="command">for</span> loop</p></li>
-        <li><p class="task-paragraph">the <span class="command">while</span> loop</p></li>
-      </ul>
+			<h2 class="task-header task-header">if...else statements</h2>
+			<p class="task-paragraph">Decision making is required when we want to execute a code only if a certain condition is satisfied.</p>
+			<p class="task-paragraph">The if…elif…else statement is used in Python for decision making.</p>
 
-      <h3>Examples</h3>
-      <p>This simple for loop example would write "hello world" five times:</p>
+
+      <h3>Syntax:</h3>
       <div class="command-examples" >
-				<p class="task-paragraph code-examples"> <span class="command">for</span> counter  <span class="specific-command">in</span> range(5):</p>
-        <p class="task-paragraph code-examples text-spaces">print("hello world")</p>
-      </div>
-      <p>The same with <span class="command">while</span>:</p>
-      <div class="command-examples" >
-
-        <p class="task-paragraph code-examples">i = 1</p>
-        <p class="task-paragraph code-examples"><span class="command">while</span> i <= 5:</p>
-        <p class="task-paragraph code-examples text-spaces">print("hello world")</p>
-        <p class="code-examples text-spaces">i += 1</p>
+				<p class="task-paragraph code-examples"><span class="command">if </span><span class="specific-command"> expression </span>:</p>
+        <p class="task-paragraph code-examples text-spaces">statement(one)</p>
+				<p class="task-paragraph code-examples"><span class="command">else </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">statement(two)</p>
       </div>
 
-      <h3>The range function</h3>
-      <p>The <span class="code-functions">range()</span> function is one of Python's built in functions. It is is used to indicate how many times the loop will be repeated.</p>
-      <p>The structure of the range function is <span class="code-functions">range(start, upto, step)</span> in which the arguments of range are used as follows:</p>
-      <ul>
-        <li><p>start and step are both optional.</p></li>
-        <li><p>upto must always be there, it means "up to but not including" the value.</p></li>
-        <li><p>start, upto, and step must all be integers</p></li>
-      </ul>
-      <div class="command-examples">
-        <ul>
-          <li><p class="code-examples"><span class="code-functions">range(10)</span> produces the list: [0,1,2,3,4,5,6,7,8,9]</p></li>
-          <li><p class="code-examples"><span class="code-functions">range(1, 7)</span> produces the list: [1,2,3,4,5,6]</p></li>
-          <li><p class="code-examples"><span class="code-functions">range(0, 30, 5)</span> produces the list: [0,5,10,15,20,25]</p></li>
-          <li><p class="code-examples"><span class="code-functions">range(5, -1, -1)</span>  produces the list: [5,4,3,2,1,0]</p></li>
-        </ul>
-      </div>
+			<p>If the condition is true, then do the indented statements.</p>
+			<p>If the condition is not true, then skip the indented statements and go to else condition.</p>
 
+			<h3>Examples:</h1>
+			<p class="task-paragraph">If the number is higher than 3, we print an appropriate message</p>
+			<div class="command-examples" >
+				<p class = "code-examples">num = 4 </p>
+				<p class="task-paragraph code-examples"><span class="command">if </span><span class="specific-command"> num > 3 </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">print("num is higher than 3")</p>
+				<p class="task-paragraph code-examples"><span class="command">else </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">print("num is less than 3")</p>
+			</div>
+
+			<p>The above program will print "num is higher than 3"</p>
+
+			<h3>Syntax of if...elif...else</h3>
+			<div class="command-examples">
+				<p class="task-paragraph code-examples"><span class="command">if </span><span class="specific-command"> expression </span>:</p>
+        <p class="task-paragraph code-examples text-spaces">statement(one)</p>
+				<p class="task-paragraph code-examples"><span class="command">elif </span><span class="specific-command"> expression </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">statement(two)</p>
+				<p class="task-paragraph code-examples"><span class="command">elif </span><span class="specific-command"> expression </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">statement(three)</p>
+				<p class="task-paragraph code-examples"><span class="command">else </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">laststatement()</p>
+			</div>
+			<p>The elif is short for else if. It allows us to check for multiple expressions.</p>
+
+			<p>If the condition for if is False, it checks the condition of the next elif block and so on.</p>
+
+			<p>If all the conditions are False, body of else is executed.</p>
+
+			<p>Only one block among the several if...elif...else blocks is executed according to the condition.</p>
+
+			<p>The if block can have only one else block. But it can have multiple elif blocks.</p>
+
+			<h3>Examples:</h1>
+			<p class="task-paragraph">If the number is higher than 3, we print an appropriate message</p>
+			<div class="command-examples" >
+				<p class = "code-examples">num = 3 </p>
+				<p class="task-paragraph code-examples"><span class="command">if </span><span class="specific-command"> num > 3 </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">print("num is higher than 3")</p>
+				<p class="task-paragraph code-examples"><span class="command">elif</span><span class="specific-command"> num == 3 </span> :</p>
+				<p class="task-paragraph code-examples text-spaces">print("num equals 3")</p>
+				<p class="task-paragraph code-examples"><span class="command">else </span>:</p>
+				<p class="task-paragraph code-examples text-spaces">print("num is less than 3")</p>
+			</div>
+			<p>The above program will print "num is higher than 3"</p>
       <h3>Instructions</h3>
       <div class="instructions-block">
-        <p>Write a loop down from 100 to 0 with a step 10 <b>(0 is not included)</b></p>
+        <p>Using loop and if else statements write a program that will find all odd numbers from 0 to 10.</p>
+				<p>To check if number is odd or even use percentage of division by two.</p>
       </div>
 			<!-- <p class="task-paragraph">Try following example using Try it option available at the top right corner of the below sample code box</p> -->
 
@@ -82,7 +104,7 @@
 
 			<div class="form-container">
 
-				<form class="code-window-user-form" id="user-window" action="/index/python_lessons_2" method="POST">
+				<form class="code-window-user-form" id="user-window" action="/index/python_lessons_3" method="POST">
 					<label class="code-window-user-label" for="user-code">
 						<p class="code-window-user-paragraph">You can type code here:</p>
 					</label>
@@ -91,8 +113,7 @@
 						<a href="/index/python_lessons" class = "arrow_prev_page"><img src="/icons/next.png" width="150px" height="150px" alt=""></a>
 					</div>
 					<input id="hidden-input" type="hidden" name="userCodeReq" value="">
-					<input id="input-task-number" type="hidden" name="taskNumber" value="2">
-
+					<input id="input-task-number" type="hidden" name="taskNumber" value="3">
 					<!-- <textarea class="code-window-user-text" rows="10" name="" id="code-user-id" ></textarea> -->
 
 				</form>
