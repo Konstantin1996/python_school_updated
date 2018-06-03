@@ -25,7 +25,7 @@ app.get('/index',function(req,res){
 	res.end();
 })
 
-app.get(['/index/python_lessons','/index/python_lessons_2','/index/python_lessons_3'], function(req,res){
+app.get(['/index/python_lessons','/index/python_lessons_2','/index/python_lessons_3','/index/python_lessons_4'], function(req,res){
 	if(req.url === '/index/python_lessons'){
 		res.render('python_lessons',{userCode:""});
 	}
@@ -35,9 +35,12 @@ app.get(['/index/python_lessons','/index/python_lessons_2','/index/python_lesson
 	else if (req.url === '/index/python_lessons_3'){
 		res.render('python_lessons_3',{userCode:""})
 	}
+	else if (req.url === '/index/python_lessons_4'){
+		res.render('python_lessons_4',{userCode:""})
+	}
 })
 
-app.post(['/index/python_lessons','/index/python_lessons_2','/index/python_lessons_3'], function(req,res,callback){
+app.post(['/index/python_lessons','/index/python_lessons_2','/index/python_lessons_3','/index/python_lessons_4'], function(req,res,callback){
 	var userCodeReq = req.body.userCodeReq;
 	var numberTask = req.body.taskNumber;
 	console.log("numberTask = " + numberTask);
@@ -62,6 +65,9 @@ app.post(['/index/python_lessons','/index/python_lessons_2','/index/python_lesso
 			res.render('python_lessons_2', {userCode : result});
 		}else if (req.url === '/index/python_lessons_3') {
 			res.render('python_lessons_3', {userCode : result})
+		}
+		else if (req.url === '/index/python_lessons_4'){
+			res.render('python_lessons_4', {userCode : result})
 		}
 		res.end();
 	});

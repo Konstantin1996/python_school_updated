@@ -63,15 +63,14 @@
 					<label class="code-window-server-label">
 						<p class="code-window-server-paragraph">Result:</p>
 					</label>
-				<div class="wrapper_for_arrow">
-					<textarea class="code-window-server-text" rows="10" name="serverCodeRes" id="code-server-id" disabled="true"><%=userCode%></textarea>
-					<a href="javascript: void(0)" class = "arrow_next_page"><img src="/icons/next.png" width="150px" height="150px" alt=""></a>
-				</div>
+					<div class="wrapper_for_arrow">
+						<textarea class="code-window-server-text" rows="10" name="serverCodeRes" id="code-server-id" disabled="true"><%=userCode%></textarea>
+						<a href="javascript: void(0)" class = "arrow_next_page"><img src="/icons/next.png" width="150px" height="150px" alt=""></a>
+					</div>
 				</form>
 			</div>
 
 			<input type="submit" form="user-window" name="userCodeBtn" value="RUN" class="btn">
-			<!-- <a href="#" class="btn user-server-btn">run</a> -->
 		</section>
 		</div>
 	</main>
@@ -131,7 +130,7 @@
 		</div>
 	</footer>
 	<div class="line-bottom"></div>
-	<script src="jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 		var editor = ace.edit("editor"); // теперь обращаться к редактору будем через editor
@@ -147,7 +146,8 @@
 		editor.setTheme("ace/theme/katzenmilch");// Далее весь экшон будет проходить тут!
 		editor.getSession().setMode("ace/mode/javascript");
 	</script>
-
+	<script type="text/javascript" src="../js/ajax.js"></script>
 	<script type="text/javascript" src="../js/frontend_test.js"></script>
+
 </body>
 </html>

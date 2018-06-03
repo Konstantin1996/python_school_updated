@@ -6,7 +6,8 @@ BLOCKED_COMMANDS = ('open', 'write', 'read', 'import', 'subprocess', 'process', 
 TASK_ANSWERS = {
 				'1': "HelloWorldPython!",
 				'2': "100\n90\n80\n70\n60\n50\n40\n30\n20\n10\n",
-				'3': "1\n3\n5\n7\n9\n"
+				'3': "1\n3\n5\n7\n9\n",
+				'4': "653.5\n1432\n778.5\n"
 				}
 TASK_COMPLETED = "\n\nRight Answer!"
 TASK_FAILED = "\n\nSomething is incorrect!\n\nRead the theory and instructions again and try to do your best!"
@@ -40,6 +41,9 @@ def print_task_result(task, result):
 	elif task == '3':
 		status = (loop_check_for in user_code and check_if in user_code) and result == TASK_ANSWERS['3']
 		print(TASK_COMPLETED) if status else print(TASK_FAILED)
+	elif task == '4':
+		status = (result == TASK_ANSWERS['4'])
+		print(TASK_COMPLETED) if status else print(TASK_FAILED)
 
 
 exec_result = execute("executor -q --timeout=0.01 --exclusive python3 file.py", capture=True)
@@ -55,3 +59,17 @@ print_task_result(task_number, exec_result)
 #     i -= 10
 # for i in range(100,0,-10):
 #     print(i)
+#
+# 4TH
+# list = [100,999,302,54,1034,1432]
+#
+# sum = 0
+# for i in list:
+#     sum+=i
+#
+# srednee = sum/len(list)
+# print(srednee)
+# maxelement = max(list)
+# print(maxelement)
+# answer = maxelement - srednee
+# print(answer)
